@@ -24,12 +24,15 @@ class CartContainer extends React.Component {
             : 'Your cart is empty'}
         </Button>
         {showModal ? (
-          <Modal>
+          <Modal onCloseRequest={this.toggleModal}>
             <Cart
               products={this.props.products}
               total={this.props.total}
               onCheckoutClicked={() => checkout(this.props.products)}
             />
+            <button className="close-modal" onClick={this.toggleModal}>
+              <span>Close Cart</span>
+            </button>
           </Modal>
         ) : null}
       </div>

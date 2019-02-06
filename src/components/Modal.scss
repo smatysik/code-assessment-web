@@ -1,5 +1,4 @@
 #modal {
-  // background-color: rgba(9, 9, 9, 0.91);
   background-color: #d5d6da;
   position: fixed;
   left: 0;
@@ -10,6 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .close-modal {
+    position: absolute;
+    top: 30px;
+    right: 28px;
+  }
 }
 
 #modal:empty {
@@ -18,13 +23,8 @@
 
 #modal > div {
   background-color: white;
-  // max-width: 500px;
   width: 780px;
   height: 678px;
   border-radius: 15px;
+  position: relative;
 }
-
-// #modal .buttons button {
-//   display: inline-block;
-//   margin-right: 15px;
-// }

@@ -5,7 +5,7 @@ import './App.scss'
 
 const App = () => (
   <div>
-    <div class="store-header">
+    <div className="store-header">
       <h1>Acme Store</h1>
       <CartContainer />
     </div>
