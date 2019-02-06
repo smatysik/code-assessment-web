@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './ProductsList.scss'
 
 const ProductsList = ({ title, children }) => (
-  <div>
-    <h3>{title}</h3>
+  <div className="ProductsList">
     <div>{children}</div>
   </div>
 )
