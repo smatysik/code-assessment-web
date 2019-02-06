@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Product from './Product'
 import ProductItem from './ProductItem'
+import Button from './Button'
 
 const setup = product => {
   const actions = {
@@ -13,7 +14,7 @@ const setup = product => {
   return {
     component: component,
     actions: actions,
-    button: component.find('button'),
+    button: component.find(Button),
     product: component.find(Product)
   }
 }
@@ -42,7 +43,7 @@ describe('ProductItem component', () => {
 
   it('should render Add To Cart message', () => {
     const { button } = setup(productProps)
-    expect(button.text()).toMatch(/^Add to cart/)
+    expect(button.props().children).toMatch(/^Add to cart/)
   })
 
   it('should not disable button', () => {
@@ -63,7 +64,7 @@ describe('ProductItem component', () => {
 
     it('should render Sold Out message', () => {
       const { button } = setup(productProps)
-      expect(button.text()).toMatch(/^Sold Out/)
+      expect(button.props().children).toMatch(/^Sold Out/)
     })
 
     it('should disable button', () => {
