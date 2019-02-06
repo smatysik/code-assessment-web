@@ -8,22 +8,25 @@ import ProductsList from '../components/ProductsList'
 
 const ProductsContainer = ({ products, addToCart }) => (
   <ProductsList title="Products">
-    {products.map(product =>
+    {products.map(product => (
       <ProductItem
         key={product.id}
         product={product}
-        onAddToCartClicked={() => addToCart(product.id)} />
-    )}
+        onAddToCartClicked={() => addToCart(product.id)}
+      />
+    ))}
   </ProductsList>
 )
 
 ProductsContainer.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
-  })).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      inventory: PropTypes.number.isRequired
+    })
+  ).isRequired,
   addToCart: PropTypes.func.isRequired
 }
 
