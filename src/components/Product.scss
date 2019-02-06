@@ -30,3 +30,22 @@
     text-transform: uppercase;
   }
 }
+
+.Cart {
+  .Product {
+    h2 {
+      font-size: 16px;
+      border: none;
+      padding: 0;
+    }
+
+    .info-title-price {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .price {
+      font-size: 14px;
+    }
+  }
+}

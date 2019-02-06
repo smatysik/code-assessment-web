@@ -5,9 +5,11 @@ import './App.scss'
 
 const App = () => (
   <div>
-    <h1>Acme Store</h1>
+    <div class="store-header">
+      <h1>Acme Store</h1>
+      <CartContainer />
+    </div>
     <ProductsContainer />
-    <CartContainer />
   </div>
 )
 

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import Button from './Button'
+import './Cart.scss'
 
 const Cart = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
@@ -15,20 +16,27 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
       />
     ))
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className="no-items">
+      <span>Please add some products to your cart.</span>
+    </div>
   )
 
   return (
-    <div>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <Button
-        onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}
-      >
-        Checkout
-      </Button>
+    <div className="Cart">
+      <div className="items">
+        <h2>Your Cart</h2>
+        <div>{nodes}</div>
+        {hasProducts && <p>Total: &#36;{total}</p>}
+      </div>
+      {hasProducts && (
+        <Button
+          className="primary"
+          onClick={onCheckoutClicked}
+          disabled={hasProducts ? '' : 'disabled'}
+        >
+          Checkout
+        </Button>
+      )}
     </div>
   )
 }

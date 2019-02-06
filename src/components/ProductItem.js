@@ -17,6 +17,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
         image={product.image}
       />
       <Button
+        className="primary"
         onClick={onAddToCartClicked}
         disabled={product.inventory > 0 ? '' : 'disabled'}
       >

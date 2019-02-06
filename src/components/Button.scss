@@ -1,22 +1,40 @@
 .Button {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: -0.15px;
-  color: #ffffff;
-  background-color: #5e97d1;
   appearance: none;
   -webkit-appearance: none;
-  padding: 12px 20px 13px 26px;
-  border-radius: 100px;
-  cursor: pointer;
+  background: none;
+  border: none;
 
-  &:hover:enabled {
-    background-color: #407fc0;
+  &:enabled {
+    cursor: pointer;
   }
 
-  &:disabled,
-  &[disabled] {
-    opacity: 0.3;
-    cursor: initial;
+  &.text-link {
+    font-size: 14px;
+    color: #292929;
+
+    &:hover:enabled {
+      color: #407fc0;
+    }
+  }
+
+  &.primary {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: -0.15px;
+    color: #ffffff;
+    background-color: #5e97d1;
+
+    padding: 12px 20px 13px 26px;
+    border-radius: 100px;
+
+    &:hover:enabled {
+      background-color: #407fc0;
+    }
+
+    &:disabled,
+    &[disabled] {
+      opacity: 0.3;
+      cursor: initial;
+    }
   }
 }
