@@ -1,15 +1,21 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+// import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import Product from './Product'
 import ProductItem from './ProductItem'
 import Button from './Button'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 const setup = product => {
   const actions = {
     onAddToCartClicked: jest.fn()
   }
 
-  const component = shallow(<ProductItem product={product} {...actions} />)
+  const component = Enzyme.shallow(
+    <ProductItem product={product} {...actions} />
+  )
 
   return {
     component: component,
