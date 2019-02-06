@@ -25,7 +25,8 @@ describe('ProductItem component', () => {
     productProps = {
       title: 'Product 1',
       price: 9.99,
-      inventory: 6
+      inventory: 6,
+      image: 'image/path.jpg'
     }
   })
 
@@ -34,7 +35,8 @@ describe('ProductItem component', () => {
     expect(product.props()).toEqual({
       title: 'Product 1',
       price: 9.99,
-      inventory: 6
+      inventory: 6,
+      image: 'image/path.jpg'
     })
   })
 

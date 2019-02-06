@@ -1,27 +1,32 @@
 .Product {
+  display: flex;
+
   h2 {
     margin: 0 0 19px 0;
   }
+
   .info {
+    width: 100%;
+  }
+  .info-title-price {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 75px 56px 88px;
 
     .price {
       font-size: 21px;
       letter-spacing: -0.27px;
       margin-bottom: 20px;
     }
+  }
 
-    .inventory {
-      flex-basis: 100%;
-      display: block;
-      font-size: 13px;
-      letter-spacing: 0;
-      color: #939393;
-      text-transform: uppercase;
-    }
+  .inventory {
+    flex-basis: 100%;
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0;
+    color: #939393;
+    text-transform: uppercase;
   }
 }
