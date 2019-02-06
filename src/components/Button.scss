@@ -1,0 +1,22 @@
+.Button {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: -0.15px;
+  color: #ffffff;
+  background-color: #5e97d1;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 12px 20px 13px 26px;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &:hover:enabled {
+    background-color: #407fc0;
+  }
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.3;
+    cursor: initial;
+  }
+}
