@@ -12,7 +12,7 @@ const Product = ({ price, inventory, title, image }) => (
       </div>
       <div className="inventory-wrapper">
         <span className="inventory">
-          {inventory ? `${inventory} remaining` : 'Out of Stock'}
+          {inventory ? `${inventory} Remaining` : 'Out of Stock'}
         </span>
       </div>
     </div>
