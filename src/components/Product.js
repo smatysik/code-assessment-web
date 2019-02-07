@@ -13,11 +13,13 @@ const Product = ({ price, inventory, title, image, children }) => (
         <h2>{title}</h2>
         <span className="price">{CurrencyFormatter(price)}</span>
       </div>
-      <div className="inventory-wrapper">
-        <span className="inventory">
-          {inventory ? `${inventory} Remaining` : 'Out of Stock'}
-        </span>
-      </div>
+      {inventory >= 0 ? (
+        <div className="inventory-wrapper">
+          <span className="inventory">
+            {inventory > 0 ? `${inventory} Remaining` : 'Out of Stock'}
+          </span>
+        </div>
+      ) : null}
       {children}
     </div>
   </div>
