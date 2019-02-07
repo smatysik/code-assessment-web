@@ -9,7 +9,7 @@ import Modal from '../components/Modal'
 import './CartContainer.scss'
 
 class CartContainer extends React.Component {
-  state = { showModal: false }
+  state = { showModal: true }
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
   render() {
     const { showModal } = this.state
@@ -28,9 +28,9 @@ class CartContainer extends React.Component {
               total={this.props.total}
               onCheckoutClicked={() => checkout(this.props.products)}
             />
-            <button className="close-modal" onClick={this.toggleModal}>
-              <span>Close Cart</span>
-            </button>
+            <Button className="close-cart" onClick={this.toggleModal}>
+              <span className="hidden">Close Cart</span>
+            </Button>
           </Modal>
         ) : null}
       </div>
