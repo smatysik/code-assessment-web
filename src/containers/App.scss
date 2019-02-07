@@ -1,4 +1,4 @@
-@import './icons';
+@import '../scss/main.scss';
 
 body {
   margin: 6.25%;
@@ -10,12 +10,20 @@ h1 {
   font-size: 51px;
   font-weight: normal;
   color: #000000;
+
+  @include tablet() {
+    font-size: 38px;
+  }
 }
 
 h2 {
   font-size: 38px;
   font-weight: normal;
   letter-spacing: -0.41px;
+
+  @include tablet() {
+    font-size: 28px;
+  }
 }
 
 .store-header {

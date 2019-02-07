@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import Button from './Button'
+import { CurrencyFormatter } from '../utils/CurrencyFormatter'
 import './Cart.scss'
 
 const Cart = ({ products, total, onCheckoutClicked }) => {
@@ -32,7 +33,7 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
         {hasProducts && (
           <div className="totals">
             <span>Total:</span>
-            <span>{total}</span>
+            <span>{CurrencyFormatter(total)}</span>
           </div>
         )}
       </div>

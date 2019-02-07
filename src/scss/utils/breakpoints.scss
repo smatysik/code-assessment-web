@@ -1,0 +1,40 @@
+/* BREAKPOINT SETTINGS */
+
+//Desktop Width
+$dkW: 1280px;
+//Tablet Width
+$tbW: 768px;
+//Mobile Width
+$mbW: 320px;
+
+/* BREAKPOINT MIXINS */
+
+@mixin mobile() {
+  @media (max-width: $mbW) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: $mbW+1) and (max-width: $tbW) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: $tbW+1) {
+    @content;
+  }
+}
+
+@mixin bigScr() {
+  @media (min-width: $dkW) {
+    @content;
+  }
+}
+
+@mixin break($px) {
+  @media (max-width: $px) {
+    @content;
+  }
+}

@@ -1,3 +1,5 @@
+@import '../scss/main.scss';
+
 .Product {
   display: flex;
   width: 100%;
@@ -44,6 +46,10 @@
     letter-spacing: 0;
     color: #939393;
     text-transform: uppercase;
+
+    @include tablet() {
+      font-size: 12px;
+    }
   }
 }
 
