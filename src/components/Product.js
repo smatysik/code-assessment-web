@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { CurrencyFormatter } from '../utils/CurrencyFormatter'
 import './Product.scss'
 
-const Product = ({ price, inventory, title, image }) => (
+const Product = ({ price, inventory, title }) => (
   <div className="Product">
     <div className="info">
       <div className="info-title-price">

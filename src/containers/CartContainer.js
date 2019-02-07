@@ -9,17 +9,19 @@ import Modal from '../components/Modal'
 import './CartContainer.scss'
 
 class CartContainer extends React.Component {
-  state = { showModal: true }
+  state = { showModal: false }
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
   render() {
     const { showModal } = this.state
+    const hasProducts = this.props.products.length > 0
+    const cartQuantity = this.props.products
+      .map(product => product.quantity)
+      .reduce((a, b) => a + b, 0)
     return (
       <div className="CartContainer">
         <Button className="text-link" onClick={this.toggleModal}>
           <span className="icon-shopping-cart" />
-          {this.props.products.length
-            ? `View Cart (${this.props.products.length})`
-            : 'Your cart is empty'}
+          {hasProducts ? `View Cart (${cartQuantity})` : 'Your cart is empty'}
         </Button>
         {showModal ? (
           <Modal onCloseRequest={this.toggleModal}>
