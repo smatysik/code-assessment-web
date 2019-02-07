@@ -49,7 +49,7 @@ describe('ProductItem component', () => {
       image: 'image/path.jpg',
       children: (
         <Button
-          className="primary add-to-cart"
+          styleName="primary add-to-cart"
           onClick={actions.onAddToCartClicked}
           disabled=""
         >

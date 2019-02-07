@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Button.scss'
 
-const Button = ({ children, className, disabled, onClick }) => (
+const Button = ({ children, styleName, disabled, onClick }) => (
   <button
-    className={`Button ${className}`}
+    className={`Button${styleName ? ' ' + styleName : ''}`}
     onClick={onClick}
     disabled={disabled}
   >
@@ -14,6 +14,7 @@ const Button = ({ children, className, disabled, onClick }) => (
 
 Button.propTypes = {
   children: PropTypes.node,
+  styleName: PropTypes.string,
   disabled: PropTypes.string,
   onClick: PropTypes.func
 }

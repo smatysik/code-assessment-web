@@ -30,7 +30,7 @@ class CartContainer extends React.Component {
               total={this.props.total}
               onCheckoutClicked={() => checkout(this.props.products)}
             />
-            <Button className="close-cart" onClick={this.toggleModal}>
+            <Button styleName="close-cart" onClick={this.toggleModal}>
               <span className="hidden">Close Cart</span>
             </Button>
           </Modal>

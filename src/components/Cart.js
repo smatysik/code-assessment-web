@@ -39,7 +39,7 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
       </div>
       {hasProducts && (
         <Button
-          className="primary"
+          styleName="primary checkout-btn"
           onClick={onCheckoutClicked}
           disabled={hasProducts ? '' : 'disabled'}
         >
