@@ -1,5 +1,4 @@
 import React from 'react'
-// import { shallow } from 'enzyme'
 import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import Cart from './Cart'
@@ -22,7 +21,7 @@ const setup = (total, products = []) => {
     actions: actions,
     button: component.find(Button),
     products: component.find(Product),
-    em: component.find('.no-items span'),
+    em: component.find('.no-items span').at(1),
     p: component.find('p')
   }
 }

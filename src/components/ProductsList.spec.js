@@ -1,9 +1,14 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import ProductsList from './ProductsList'
 
+Enzyme.configure({ adapter: new Adapter() })
+
 const setup = props => {
-  const component = shallow(<ProductsList>{props.children}</ProductsList>)
+  const component = Enzyme.shallow(
+    <ProductsList>{props.children}</ProductsList>
+  )
 
   return {
     component: component,
