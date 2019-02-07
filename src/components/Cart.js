@@ -17,6 +17,7 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
     ))
   ) : (
     <div className="no-items">
+      <span className="icon-shopping-cart" />
       <span>Please add some products to your cart.</span>
     </div>
   )

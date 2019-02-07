@@ -6,6 +6,7 @@ import { getTotal, getCartProducts } from '../reducers'
 import Cart from '../components/Cart'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
+import './CartContainer.scss'
 
 class CartContainer extends React.Component {
   state = { showModal: false }
@@ -14,11 +15,8 @@ class CartContainer extends React.Component {
     const { showModal } = this.state
     return (
       <div className="CartContainer">
-        <Button
-          className="text-link"
-          onClick={this.toggleModal}
-          disabled={this.props.products.length > 0 ? '' : 'disabled'}
-        >
+        <Button className="text-link" onClick={this.toggleModal}>
+          <span className="icon-shopping-cart" />
           {this.props.products.length
             ? `View Cart (${this.props.products.length})`
             : 'Your cart is empty'}
