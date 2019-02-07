@@ -5,25 +5,8 @@
   border-radius: 8px;
   display: flex;
 
-  .image {
-    width: 40.625%;
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  }
-
-  .product-info {
-    position: relative;
-    width: 59.375%;
-    padding: 0 75px 0 88px;
-    margin: 37px 0 56px;
-    box-sizing: border-box;
-
-    .Button {
-      position: absolute;
-      bottom: 0;
-    }
+  .Button {
+    position: absolute;
+    bottom: 0;
   }
 }

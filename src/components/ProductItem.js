@@ -6,16 +6,12 @@ import './ProductItem.scss'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <div className="ProductItem">
-    <div className="image">
-      <img src={product.image} alt={product.title} />
-    </div>
-    <div className="product-info">
-      <Product
-        title={product.title}
-        price={product.price}
-        inventory={product.inventory}
-        image={product.image}
-      />
+    <Product
+      title={product.title}
+      price={product.price}
+      inventory={product.inventory}
+      image={product.image}
+    >
       <Button
         className="primary"
         onClick={onAddToCartClicked}
@@ -23,7 +19,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       >
         {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
       </Button>
-    </div>
+    </Product>
   </div>
 )
 

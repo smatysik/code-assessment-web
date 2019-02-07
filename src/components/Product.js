@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import { CurrencyFormatter } from '../utils/CurrencyFormatter'
 import './Product.scss'
 
-const Product = ({ price, inventory, title }) => (
+const Product = ({ price, inventory, title, image, children }) => (
   <div className="Product">
+    <div className="image">
+      <img src={image} alt={title} />
+    </div>
     <div className="info">
       <div className="info-title-price">
         <h2>{title}</h2>
@@ -15,6 +18,7 @@ const Product = ({ price, inventory, title }) => (
           {inventory ? `${inventory} Remaining` : 'Out of Stock'}
         </span>
       </div>
+      {children}
     </div>
   </div>
 )
