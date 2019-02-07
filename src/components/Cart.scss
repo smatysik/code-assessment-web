@@ -24,6 +24,7 @@
 
       &.column {
         flex-direction: column;
+        flex: auto;
       }
     }
 
@@ -71,6 +72,7 @@
       font-size: 21px;
       line-height: 28px;
       letter-spacing: -0.44px;
+      width: 90%;
 
       &.icon-shopping-cart {
         width: 100%;
@@ -83,5 +85,58 @@
 
   .Product {
     margin-bottom: 20px;
+  }
+
+  .cart-controls {
+    display: flex;
+    flex-direction: row;
+    // flex-flow: row nowrap;
+
+    input {
+      flex: 1;
+      text-align: center;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      border-left: 0;
+      border-right: 0;
+      font-size: 14px;
+      letter-spacing: -0.59px;
+      width: 100%;
+    }
+
+    .decrease-icon,
+    .increase-icon {
+      width: 14px;
+      height: 14px;
+      display: block;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #8e939c;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
+    .increase-icon {
+      &:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #8e939c;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: rotate(90deg);
+      }
+    }
   }
 }

@@ -16,6 +16,22 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
           quantity={product.quantity}
           image={product.image}
         />
+        <div className="cart-controls">
+          <Button styleName="secondary decrease-btn">
+            <span className="decrease-icon" />
+            <span className="hidden">Decrease</span>
+          </Button>
+          <input
+            value={product.quantity}
+            onChange={() => {
+              console.log('onChange')
+            }}
+          />
+          <Button styleName="secondary right">
+            <span className="increase-icon" />
+            <span className="hidden">Increase</span>
+          </Button>
+        </div>
       </div>
     ))
   ) : (
