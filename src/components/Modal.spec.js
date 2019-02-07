@@ -22,7 +22,7 @@ const setup = props => {
   return {
     actions,
     component,
-    children: component.children().at(0)
+    modalRoot
   }
 }
 
@@ -40,5 +40,10 @@ describe('Modal component', () => {
     expect(component.props()).toEqual({
       onCloseRequest: actions.onCloseRequest
     })
+  })
+
+  it('should render children', () => {
+    const modalRoot = global.document.querySelector('#modal')
+    expect(modalRoot.hasChildNodes()).toBeTruthy()
   })
 })
