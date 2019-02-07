@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import Product from './Product'
 import ProductItem from './ProductItem'
 import Button from './Button'
+import { getHeapStatistics } from 'v8'
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -13,7 +14,10 @@ const setup = product => {
   }
 
   const component = Enzyme.shallow(
-    <ProductItem product={product} {...actions} />
+    <ProductItem
+      product={product}
+      onAddToCartClicked={actions.onAddToCartClicked}
+    />
   )
 
   return {
@@ -33,21 +37,28 @@ describe('ProductItem component', () => {
       title: 'Product 1',
       price: 9.99,
       inventory: 6,
-      image: 'image/path.jpg',
-      children: 'Test Children'
+      image: 'image/path.jpg'
     }
   })
 
-  // it('should render product', () => {
-  //   const { product } = setup(productProps)
-  //   expect(product.props()).toEqual({
-  //     title: 'Product 1',
-  //     price: 9.99,
-  //     inventory: 6,
-  //     image: 'image/path.jpg',
-  //     children: 'Test Children'
-  //   })
-  // })
+  it('should render product', () => {
+    const { actions, product } = setup(productProps)
+    expect(product.props()).toEqual({
+      title: 'Product 1',
+      price: 9.99,
+      inventory: 6,
+      image: 'image/path.jpg',
+      children: (
+        <Button
+          className="primary add-to-cart"
+          onClick={actions.onAddToCartClicked}
+          disabled=""
+        >
+          Add to cart
+        </Button>
+      )
+    })
+  })
 
   it('should render Add To Cart message', () => {
     const { button } = setup(productProps)
