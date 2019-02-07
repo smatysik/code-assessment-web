@@ -43,6 +43,7 @@ describe('Modal component', () => {
   })
 
   it('should render children', () => {
+    setup(modalProps)
     const modalRoot = global.document.querySelector('#modal')
     expect(modalRoot.hasChildNodes()).toBeTruthy()
   })
