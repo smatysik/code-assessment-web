@@ -1,8 +1,11 @@
+@import '../scss/main.scss';
+
 .Button {
   appearance: none;
   -webkit-appearance: none;
   background: none;
   border: none;
+  padding: 0;
 
   &:enabled {
     cursor: pointer;
@@ -28,7 +31,6 @@
     letter-spacing: -0.15px;
     color: #ffffff;
     background-color: #5e97d1;
-
     padding: 12px 20px 13px 26px;
     border-radius: 100px;
 
@@ -40,6 +42,10 @@
     &[disabled] {
       opacity: 0.3;
       cursor: initial;
+    }
+
+    @include mobile() {
+      padding: 8px 17px;
     }
   }
 }

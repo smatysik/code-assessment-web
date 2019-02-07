@@ -1,3 +1,5 @@
+@import '../scss/main.scss';
+
 #modal {
   background-color: #d5d6da;
   position: fixed;
@@ -23,8 +25,14 @@
 
 #modal > div {
   background-color: white;
-  width: 780px;
-  height: 678px;
+  width: 61%;
+  height: auto;
   border-radius: 15px;
   position: relative;
+
+  @include tablet() {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
 }

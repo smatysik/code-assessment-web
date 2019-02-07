@@ -29,7 +29,7 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
     <div className="Cart">
       <div className="items">
         <h2>Your Cart</h2>
-        <div>{nodes}</div>
+        <div className={hasProducts ? 'column' : 'row'}>{nodes}</div>
         {hasProducts && (
           <div className="totals">
             <span>Total:</span>

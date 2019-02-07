@@ -16,7 +16,7 @@ $mbW: 320px;
 }
 
 @mixin tablet() {
-  @media (min-width: $mbW+1) and (max-width: $tbW) {
+  @media (max-width: $tbW) {
     @content;
   }
 }
