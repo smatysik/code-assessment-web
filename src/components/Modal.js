@@ -2,13 +2,12 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 import './Modal.scss'
 
-const modalRoot = document.getElementById('modal')
-
 class Modal extends React.Component {
   constructor(props) {
     super(props)
     this.el = document.createElement('div')
     this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.modalRoot = document.getElementById('modal')
   }
 
   handleKeyUp(e) {
@@ -28,12 +27,12 @@ class Modal extends React.Component {
 
   componentDidMount() {
     window.addEventListener('keyup', this.handleKeyUp, false)
-    modalRoot.appendChild(this.el)
+    this.modalRoot.appendChild(this.el)
   }
 
   componentWillUnmount() {
     window.removeEventListener('keyup', this.handleKeyUp, false)
-    modalRoot.removeChild(this.el)
+    this.modalRoot.removeChild(this.el)
   }
 
   render() {
