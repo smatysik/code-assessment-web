@@ -4,7 +4,6 @@ import Adapter from 'enzyme-adapter-react-16'
 import Product from './Product'
 import ProductItem from './ProductItem'
 import Button from './Button'
-import { getHeapStatistics } from 'v8'
 
 Enzyme.configure({ adapter: new Adapter() })
 
