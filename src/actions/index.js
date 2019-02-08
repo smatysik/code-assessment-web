@@ -39,6 +39,7 @@ export const modifyQuantity = (productId, newQuantity) => (
   dispatch,
   getState
 ) => {
+  console.log(productId, newQuantity)
   const inventory = getState().products.byId[productId].inventory
   const quantity = getState().cart.quantityById[productId]
   if (newQuantity > 0 && newQuantity <= inventory + quantity) {
