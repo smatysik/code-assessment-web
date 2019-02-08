@@ -5,8 +5,6 @@ import Button from './Button'
 import { CurrencyFormatter } from '../utils/CurrencyFormatter'
 import './Cart.scss'
 
-// const Cart = ({ products, total, onCheckoutClicked, modifyQuantity }) => {}
-
 class Cart extends React.Component {
   onQuantityChange(event, productId) {
     const value = parseInt(event.target.value, 10)
@@ -26,7 +24,9 @@ class Cart extends React.Component {
             price={product.price}
             quantity={product.quantity}
             image={product.image}
-          />
+          >
+            <Button styleName="text-link remove-btn">Remove</Button>
+          </Product>
           <div className="cart-controls">
             <Button
               styleName="secondary decrease-btn"
@@ -91,7 +91,8 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
-  modifyQuantity: PropTypes.func
+  modifyQuantity: PropTypes.func,
+  removeCartItem: PropTypes.func
 }
 
 export default Cart
