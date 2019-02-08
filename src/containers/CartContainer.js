@@ -13,8 +13,9 @@ class CartContainer extends React.Component {
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
   render() {
     const { showModal } = this.state
-    const hasProducts = this.props.products.length > 0
-    const cartQuantity = this.props.products
+    const { products, total, checkout } = this.props
+    const hasProducts = products.length > 0
+    const cartQuantity = products
       .map(product => product.quantity)
       .reduce((a, b) => a + b, 0)
     return (
@@ -26,9 +27,9 @@ class CartContainer extends React.Component {
         {showModal ? (
           <Modal onCloseRequest={this.toggleModal}>
             <Cart
-              products={this.props.products}
-              total={this.props.total}
-              onCheckoutClicked={() => checkout(this.props.products)}
+              products={products}
+              total={total}
+              onCheckoutClicked={() => checkout(products)}
             />
             <Button className="close-cart" onClick={this.toggleModal}>
               <span className="hidden">Close Cart</span>
