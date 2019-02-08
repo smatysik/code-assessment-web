@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { checkout } from '../actions'
+import { checkout, modifyQuantity } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import Cart from '../components/Cart'
 import Button from '../components/Button'
@@ -13,7 +13,7 @@ class CartContainer extends React.Component {
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
   render() {
     const { showModal } = this.state
-    const { products, total, checkout } = this.props
+    const { products, total, checkout, modifyQuantity } = this.props
     const hasProducts = products.length > 0
     const cartQuantity = products
       .map(product => product.quantity)
@@ -30,6 +30,7 @@ class CartContainer extends React.Component {
               products={products}
               total={total}
               onCheckoutClicked={() => checkout(products)}
+              modifyQuantity={modifyQuantity}
             />
             <Button styleName="close-cart" onClick={this.toggleModal}>
               <span className="hidden">Close Cart</span>
@@ -51,7 +52,8 @@ CartContainer.propTypes = {
     })
   ).isRequired,
   total: PropTypes.string,
-  checkout: PropTypes.func.isRequired
+  checkout: PropTypes.func.isRequired,
+  modifyQuantity: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -61,5 +63,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { checkout }
+  { checkout, modifyQuantity }
 )(CartContainer)

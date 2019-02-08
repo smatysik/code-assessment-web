@@ -1,8 +1,17 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes'
+import {
+  RECEIVE_PRODUCTS,
+  ADD_TO_CART,
+  UPDATE_INVENTORY
+} from '../constants/ActionTypes'
 
 const products = (state, action) => {
   switch (action.type) {
+    case UPDATE_INVENTORY:
+      return {
+        ...state,
+        inventory: action.newInventory
+      }
     case ADD_TO_CART:
       return {
         ...state,

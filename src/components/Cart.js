@@ -5,7 +5,7 @@ import Button from './Button'
 import { CurrencyFormatter } from '../utils/CurrencyFormatter'
 import './Cart.scss'
 
-const Cart = ({ products, total, onCheckoutClicked }) => {
+const Cart = ({ products, total, onCheckoutClicked, modifyQuantity }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product => (
@@ -17,7 +17,10 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
           image={product.image}
         />
         <div className="cart-controls">
-          <Button styleName="secondary decrease-btn">
+          <Button
+            styleName="secondary decrease-btn"
+            onClick={() => modifyQuantity(product.id, product.quantity - 1)}
+          >
             <span className="decrease-icon" />
             <span className="hidden">Decrease</span>
           </Button>
@@ -27,7 +30,10 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
               console.log('onChange')
             }}
           />
-          <Button styleName="secondary right">
+          <Button
+            styleName="secondary right"
+            onClick={() => modifyQuantity(product.id, product.quantity + 1)}
+          >
             <span className="increase-icon" />
             <span className="hidden">Increase</span>
           </Button>
@@ -69,7 +75,8 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
-  onCheckoutClicked: PropTypes.func
+  onCheckoutClicked: PropTypes.func,
+  modifyQuantity: PropTypes.func
 }
 
 export default Cart
