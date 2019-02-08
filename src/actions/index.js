@@ -23,6 +23,11 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
+const removeCartItemUnsafe = productId => ({
+  type: types.REMOVE_CART_ITEM,
+  productId
+})
+
 const updateInventoryUnsafe = (productId, newInventory) => ({
   type: types.UPDATE_INVENTORY,
   productId,
@@ -41,9 +46,12 @@ export const modifyQuantity = (productId, newQuantity) => (
 ) => {
   const inventory = getState().products.byId[productId].inventory
   const quantity = getState().cart.quantityById[productId]
+  const newInventory = inventory + quantity - newQuantity
   if (newQuantity > 0 && newQuantity <= inventory + quantity) {
-    const newInventory = inventory + quantity - newQuantity
     dispatch(modifyQuantityUnsafe(productId, newQuantity))
+    dispatch(updateInventoryUnsafe(productId, newInventory))
+  } else if (newQuantity === 0) {
+    dispatch(removeCartItemUnsafe(productId))
     dispatch(updateInventoryUnsafe(productId, newInventory))
   }
 }

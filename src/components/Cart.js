@@ -25,7 +25,12 @@ class Cart extends React.Component {
             quantity={product.quantity}
             image={product.image}
           >
-            <Button styleName="text-link remove-btn">Remove</Button>
+            <Button
+              styleName="text-link remove-btn"
+              onClick={() => modifyQuantity(product.id, 0)}
+            >
+              Remove
+            </Button>
           </Product>
           <div className="cart-controls">
             <Button
@@ -91,8 +96,7 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
-  modifyQuantity: PropTypes.func,
-  removeCartItem: PropTypes.func
+  modifyQuantity: PropTypes.func
 }
 
 export default Cart
