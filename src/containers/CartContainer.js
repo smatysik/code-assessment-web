@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { checkout, modifyQuantity } from '../actions'
-import { getTotal, getCartProducts } from '../reducers'
+import { getTotal, getCartProducts, getSubtotal, getTax } from '../reducers'
 import Cart from '../components/Cart'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
@@ -14,7 +14,14 @@ class CartContainer extends React.Component {
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
   render() {
     const { showModal } = this.state
-    const { products, total, checkout, modifyQuantity } = this.props
+    const {
+      products,
+      subtotal,
+      tax,
+      total,
+      checkout,
+      modifyQuantity
+    } = this.props
     const hasProducts = products.length > 0
     const cartQuantity = products
       .map(product => product.quantity)
@@ -29,6 +36,8 @@ class CartContainer extends React.Component {
           <Modal onCloseRequest={this.toggleModal}>
             <Cart
               products={products}
+              subtotal={subtotal}
+              tax={tax}
               total={total}
               onCheckoutClicked={() => checkout(products)}
               modifyQuantity={modifyQuantity}
@@ -63,6 +72,8 @@ CartContainer.propTypes = {
 const mapStateToProps = state => ({
   products: getCartProducts(state),
   productInventory: getVisibleProducts(state.products),
+  subtotal: getSubtotal(state),
+  tax: getTax(state),
   total: getTotal(state)
 })
 

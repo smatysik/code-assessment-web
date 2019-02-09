@@ -14,11 +14,18 @@ class Cart extends React.Component {
   }
 
   render() {
-    const { products, total, onCheckoutClicked, modifyQuantity } = this.props
+    const {
+      products,
+      subtotal,
+      tax,
+      total,
+      onCheckoutClicked,
+      modifyQuantity
+    } = this.props
     const hasProducts = products.length > 0
     const nodes = hasProducts ? (
       products.map(product => (
-        <div key={product.id}>
+        <div className="cart-item" key={product.id}>
           <Product
             title={product.title}
             price={product.price}
@@ -76,8 +83,18 @@ class Cart extends React.Component {
           <div className={hasProducts ? 'column' : 'row'}>{nodes}</div>
           {hasProducts && (
             <div className="totals">
-              <span>Total:</span>
-              <span>{CurrencyFormatter(total)}</span>
+              <div className="subtotal">
+                <span>Subtotal:</span>
+                <span>{CurrencyFormatter(subtotal)}</span>
+              </div>
+              <div className="tax">
+                <span>Tax:</span>
+                <span>{CurrencyFormatter(tax)}</span>
+              </div>
+              <div className="grand-total">
+                <span>Total:</span>
+                <span>{CurrencyFormatter(total)}</span>
+              </div>
             </div>
           )}
         </div>
@@ -85,7 +102,7 @@ class Cart extends React.Component {
           <Button
             styleName="primary checkout-btn"
             onClick={onCheckoutClicked}
-            disabled={hasProducts ? '' : 'disabled'}
+            disabled={!hasProducts}
           >
             Checkout
           </Button>
