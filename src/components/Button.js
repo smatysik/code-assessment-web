@@ -15,7 +15,7 @@ const Button = ({ children, styleName, disabled, onClick }) => (
 Button.propTypes = {
   children: PropTypes.node,
   styleName: PropTypes.string,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func
 }
 

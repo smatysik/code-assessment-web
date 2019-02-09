@@ -15,7 +15,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
       <Button
         styleName="primary add-to-cart"
         onClick={onAddToCartClicked}
-        disabled={product.inventory > 0 ? '' : 'disabled'}
+        disabled={product.inventory === 0}
       >
         {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
       </Button>

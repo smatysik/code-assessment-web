@@ -78,6 +78,13 @@
     &[disabled] {
       background-color: #f9f9f9;
       color: #dedede;
+
+      span {
+        &:before,
+        &:after {
+          background-color: #dedede;
+        }
+      }
     }
   }
 }

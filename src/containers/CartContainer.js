@@ -7,6 +7,7 @@ import Cart from '../components/Cart'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 import './CartContainer.scss'
+import { getVisibleProducts } from '../reducers/products'
 
 class CartContainer extends React.Component {
   state = { showModal: false }
@@ -51,6 +52,9 @@ CartContainer.propTypes = {
       quantity: PropTypes.number.isRequired
     })
   ).isRequired,
+  // productInventory: PropTypes.arrayOf(
+  //   PropTypes.sha
+  // )
   total: PropTypes.string,
   checkout: PropTypes.func.isRequired,
   modifyQuantity: PropTypes.func.isRequired
@@ -58,6 +62,7 @@ CartContainer.propTypes = {
 
 const mapStateToProps = state => ({
   products: getCartProducts(state),
+  productInventory: getVisibleProducts(state.products),
   total: getTotal(state)
 })
 

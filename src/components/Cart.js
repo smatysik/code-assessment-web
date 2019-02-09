@@ -23,6 +23,7 @@ class Cart extends React.Component {
             title={product.title}
             price={product.price}
             quantity={product.quantity}
+            inventory={product.inventory}
             image={product.image}
           >
             <Button
@@ -36,6 +37,7 @@ class Cart extends React.Component {
             <Button
               styleName="secondary decrease-btn"
               onClick={() => modifyQuantity(product.id, product.quantity - 1)}
+              disabled={product.quantity - 1 === 0}
             >
               <span className="decrease-icon" />
               <span className="hidden">Decrease</span>
@@ -52,6 +54,7 @@ class Cart extends React.Component {
             <Button
               styleName="secondary right"
               onClick={() => modifyQuantity(product.id, product.quantity + 1)}
+              disabled={product.inventory === 0}
             >
               <span className="increase-icon" />
               <span className="hidden">Increase</span>
