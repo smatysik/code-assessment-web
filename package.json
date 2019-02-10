@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.1",
+    "focus-trap-react": "^6.0.0",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.4",
     "prop-types": "^15.6.2",

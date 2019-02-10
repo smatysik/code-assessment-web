@@ -12,28 +12,32 @@
   justify-content: center;
   align-items: center;
 
+  &:empty {
+    display: none;
+  }
+
   .close-cart {
     position: absolute;
     top: 30px;
     right: 28px;
     z-index: 1;
   }
-}
 
-#modal:empty {
-  display: none;
-}
+  > div {
+    background-color: white;
+    width: 61%;
+    height: 80%;
+    border-radius: 15px;
+    position: relative;
 
-#modal > div {
-  background-color: white;
-  width: 61%;
-  height: 80%;
-  border-radius: 15px;
-  position: relative;
+    @include tablet() {
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
 
-  @include tablet() {
+  .focus-trap {
     height: 100%;
-    width: 100%;
-    border-radius: 0;
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import FocusTrap from 'focus-trap-react'
 import { checkout, modifyQuantity } from '../actions'
 import { getTotal, getCartProducts, getSubtotal, getTax } from '../reducers'
 import Cart from '../components/Cart'
@@ -34,17 +35,21 @@ class CartContainer extends React.Component {
         </Button>
         {showModal ? (
           <Modal onCloseRequest={this.toggleModal}>
-            <Button styleName="close-cart" onClick={this.toggleModal}>
-              <span className="hidden">Close Cart</span>
-            </Button>
-            <Cart
-              products={products}
-              subtotal={subtotal}
-              tax={tax}
-              total={total}
-              onCheckoutClicked={() => checkout(products)}
-              modifyQuantity={modifyQuantity}
-            />
+            <FocusTrap>
+              <div className="focus-trap">
+                <Button styleName="close-cart" onClick={this.toggleModal}>
+                  <span className="hidden">Close Cart</span>
+                </Button>
+                <Cart
+                  products={products}
+                  subtotal={subtotal}
+                  tax={tax}
+                  total={total}
+                  onCheckoutClicked={() => checkout(products)}
+                  modifyQuantity={modifyQuantity}
+                />
+              </div>
+            </FocusTrap>
           </Modal>
         ) : null}
       </div>
