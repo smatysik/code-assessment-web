@@ -12,7 +12,19 @@ export default {
         response => response.json(),
         error => console.log('An error occurred.', error)
       )
-      .then(json => cb(json))
+      .then(json => {
+        let products = []
+        for (let i = 0; i < json.length; i++) {
+          products.push({
+            id: json[i].id,
+            title: json[i].productTitle,
+            price: json[i].price.value,
+            inventory: json[i].inventory,
+            image: `/images/${json[i].productTitle.toLowerCase()}.jpg`
+          })
+        }
+        cb(products)
+      })
   },
   buyProducts: (payload, cb, timeout) =>
     setTimeout(() => cb(), timeout || TIMEOUT)
