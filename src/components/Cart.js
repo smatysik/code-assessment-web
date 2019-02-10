@@ -32,6 +32,7 @@ class Cart extends React.Component {
             quantity={product.quantity}
             inventory={product.inventory}
             image={product.image}
+            displayInventory={false}
           >
             <Button
               styleName="text-link remove-btn"
@@ -80,7 +81,9 @@ class Cart extends React.Component {
       <div className="Cart">
         <div className="items">
           <h2>Your Cart</h2>
-          <div className={hasProducts ? 'column' : 'row'}>{nodes}</div>
+          <div className={`cart-items ${hasProducts ? 'column' : 'row'}`}>
+            {nodes}
+          </div>
           {hasProducts && (
             <div className="totals">
               <div className="subtotal">
