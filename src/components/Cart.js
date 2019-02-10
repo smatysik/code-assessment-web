@@ -50,15 +50,18 @@ class Cart extends React.Component {
               <span className="decrease-icon" />
               <span className="hidden">Decrease</span>
             </Button>
-            <input
-              value={product.quantity}
-              onClick={event => {
-                event.target.select()
-              }}
-              onChange={event => {
-                this.onQuantityChange(event, product.id)
-              }}
-            />
+            <label>
+              <span className="hidden">Quantity:</span>
+              <input
+                value={product.quantity}
+                onClick={event => {
+                  event.target.select()
+                }}
+                onChange={event => {
+                  this.onQuantityChange(event, product.id)
+                }}
+              />
+            </label>
             <Button
               styleName="secondary right"
               onClick={() => modifyQuantity(product.id, product.quantity + 1)}
