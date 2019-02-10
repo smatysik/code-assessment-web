@@ -34,6 +34,9 @@ class CartContainer extends React.Component {
         </Button>
         {showModal ? (
           <Modal onCloseRequest={this.toggleModal}>
+            <Button styleName="close-cart" onClick={this.toggleModal}>
+              <span className="hidden">Close Cart</span>
+            </Button>
             <Cart
               products={products}
               subtotal={subtotal}
@@ -42,9 +45,6 @@ class CartContainer extends React.Component {
               onCheckoutClicked={() => checkout(products)}
               modifyQuantity={modifyQuantity}
             />
-            <Button styleName="close-cart" onClick={this.toggleModal}>
-              <span className="hidden">Close Cart</span>
-            </Button>
           </Modal>
         ) : null}
       </div>
