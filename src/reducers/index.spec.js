@@ -1,4 +1,4 @@
-import { getTotal, getCartProducts } from './index'
+import { getSubtotal, getTax, getTotal, getCartProducts } from './index'
 
 describe('selectors', () => {
   describe('getTotal', () => {
@@ -29,7 +29,7 @@ describe('selectors', () => {
           }
         }
       }
-      expect(getTotal(state)).toBe('27.93')
+      expect(getSubtotal(state)).toBe('27.93')
     })
   })
 

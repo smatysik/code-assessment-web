@@ -23,7 +23,7 @@ const setup = (total, products = []) => {
     button: component.find(Button).at(3),
     products: component.find(Product),
     em: component.find('.no-items span').at(1),
-    p: component.find('.totals span').at(1)
+    p: component.find('.grand-total span').at(1)
   }
 }
 
@@ -45,7 +45,8 @@ describe('Cart component', () => {
         title: 'Product 1',
         price: 9.99,
         quantity: 1,
-        image: 'product-image.jpg'
+        image: 'product-image.jpg',
+        displayInventory: false
       }
     ]
 
@@ -56,6 +57,7 @@ describe('Cart component', () => {
         price: product[0].price,
         quantity: product[0].quantity,
         image: 'product-image.jpg',
+        displayInventory: false,
         children: (
           <Button
             onClick={() => {
@@ -80,7 +82,7 @@ describe('Cart component', () => {
 
     it('should render active button', () => {
       const { button } = setup('9.99', product)
-      expect(button.prop('disabled')).toEqual('')
+      expect(button.prop('disabled')).toBeFalsy()
     })
 
     it('should call action on button click', () => {
