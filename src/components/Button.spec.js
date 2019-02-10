@@ -20,20 +20,20 @@ describe('Button component', () => {
   beforeEach(() => {
     buttonProps = {
       className: 'button-class',
-      disabled: '',
+      disabled: false,
       children: 'Test Children'
     }
   })
 
   it('should render an enabled button', () => {
     const { component } = setup(buttonProps)
-    expect(component.prop('disabled')).toEqual('')
+    expect(component.prop('disabled')).toBeFalsy()
   })
 
   it('should render a disabled button', () => {
-    buttonProps.disabled = 'disabled'
+    buttonProps.disabled = true
     const { component } = setup(buttonProps)
-    expect(component.prop('disabled')).toEqual('disabled')
+    expect(component.prop('disabled')).toBeTruthy()
   })
 
   it('should render children', () => {

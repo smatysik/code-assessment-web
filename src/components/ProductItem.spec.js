@@ -47,11 +47,12 @@ describe('ProductItem component', () => {
       price: 9.99,
       inventory: 6,
       image: 'image/path.jpg',
+      displayInventory: true,
       children: (
         <Button
           styleName="primary add-to-cart"
           onClick={actions.onAddToCartClicked}
-          disabled=""
+          disabled={false}
         >
           Add to cart
         </Button>
@@ -66,7 +67,7 @@ describe('ProductItem component', () => {
 
   it('should not disable button', () => {
     const { button } = setup(productProps)
-    expect(button.prop('disabled')).toEqual('')
+    expect(button.prop('disabled')).toBeFalsy()
   })
 
   it('should call action on button click', () => {
@@ -87,7 +88,7 @@ describe('ProductItem component', () => {
 
     it('should disable button', () => {
       const { button } = setup(productProps)
-      expect(button.prop('disabled')).toEqual('disabled')
+      expect(button.prop('disabled')).toBeTruthy()
     })
   })
 })
