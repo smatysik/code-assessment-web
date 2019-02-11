@@ -31,6 +31,11 @@ New Components:
 - Button.js: a wrapper for the `button` element to make standardizing button styling easier.
 - Modal.js: uses React Portals to display child nodes within HTML container outside of the application root container. Modal component leaves display control to parent component, but does accept an `onCloseRequest` prop to handle standard keyboard close functionality. `react-focus-trap` is used to maintain focus within modal while navigating with tab and shift+tab.
 
+## Accessibility (WCAG compliance)
+
+- Added `eslint-plugin-jsx-a11y` to lint for common accessibility mistakes
+- Used [WebAim WAVE](https://wave.webaim.org/) tool to provide additional accessibility error checking
+
 ## Future Work
 
 - Implement localization, using the product currency value to convert prices before display in utils/CurrencyFormatter.js
