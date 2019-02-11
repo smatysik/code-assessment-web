@@ -8,13 +8,17 @@ import ProductsList from '../components/ProductsList'
 
 const ProductsContainer = ({ products, addToCart }) => (
   <ProductsList title="Products">
-    {products.map(product => (
-      <ProductItem
-        key={product.id}
-        product={product}
-        onAddToCartClicked={() => addToCart(product.id)}
-      />
-    ))}
+    {products.length ? (
+      products.map(product => (
+        <ProductItem
+          key={product.id}
+          product={product}
+          onAddToCartClicked={() => addToCart(product.id)}
+        />
+      ))
+    ) : (
+      <span>Loading Products...</span>
+    )}
   </ProductsList>
 )
 
