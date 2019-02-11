@@ -37,7 +37,8 @@ Product.propTypes = {
   inventory: PropTypes.number,
   title: PropTypes.string,
   image: PropTypes.string,
-  displayInventory: PropTypes.bool
+  displayInventory: PropTypes.bool,
+  children: PropTypes.node
 }
 
 Product.defaultProps = {

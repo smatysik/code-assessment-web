@@ -120,6 +120,8 @@ class Cart extends React.Component {
 
 Cart.propTypes = {
   products: PropTypes.array,
+  subtotal: PropTypes.string,
+  tax: PropTypes.string,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
   modifyQuantity: PropTypes.func

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
 import './Modal.scss'
 
@@ -38,6 +39,11 @@ class Modal extends React.Component {
   render() {
     return createPortal(this.props.children, this.el)
   }
+}
+
+Modal.propTypes = {
+  children: PropTypes.node,
+  onCloseRequest: PropTypes.func
 }
 
 export default Modal

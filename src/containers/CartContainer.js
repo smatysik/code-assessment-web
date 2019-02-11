@@ -66,9 +66,8 @@ CartContainer.propTypes = {
       quantity: PropTypes.number.isRequired
     })
   ).isRequired,
-  // productInventory: PropTypes.arrayOf(
-  //   PropTypes.sha
-  // )
+  subtotal: PropTypes.string,
+  tax: PropTypes.string,
   total: PropTypes.string,
   checkout: PropTypes.func.isRequired,
   modifyQuantity: PropTypes.func.isRequired
