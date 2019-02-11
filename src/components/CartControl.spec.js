@@ -31,15 +31,15 @@ describe('CartControl component', () => {
     expect(input.props().value).toEqual(2)
   })
 
-  it('should call modify function when decrement button is clicked', () => {
+  it('should call modify function with decremented value when decrement button is clicked', () => {
     const { decrement, actions } = setup()
     decrement.simulate('click')
-    expect(actions.modify).toBeCalled()
+    expect(actions.modify).toHaveBeenCalledWith(1)
   })
 
-  it('should call modify function when increment button is clicked', () => {
+  it('should call modify function with incremented value when increment button is clicked', () => {
     const { increment, actions } = setup()
     increment.simulate('click')
-    expect(actions.modify).toBeCalled()
+    expect(actions.modify).toHaveBeenCalledWith(3)
   })
 })
