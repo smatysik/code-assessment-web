@@ -19,3 +19,19 @@ Note: You're encouraged to show your work by including multiple commits - we'll 
 3. [Hook Up Product API](/tasks/03-product-api.md)
 
 Please also update this README file: we'd love to see notes on your decision-making process, links to the most exciting pieces of code, or anything else that will give us additional context when reviewing your assessment.
+
+## Solutions
+
+While the final and latest version of the app can be found on the master branch, there are also three task branches that show the state of the application when the relevant task was completed.
+
+## Task 1:
+
+New Components:
+
+- Button.js: a wrapper for the `button` element to make standardizing button styling easier.
+- Modal.js: uses React Portals to display child nodes within HTML container outside of the application root container. Modal component leaves display control to parent component, but does accept an `onCloseRequest` prop to handle standard keyboard close functionality. `react-focus-trap` is used to maintain focus within modal while navigating with tab and shift+tab.
+
+## Future Work
+
+- Implement localization, using the product currency value to convert prices before display in utils/CurrencyFormatter.js
+- Implement srcset to serve appropriately sized image assets based on screen width, implement build process using [sharp](https://github.com/lovell/sharp) to generate needed sizes.
