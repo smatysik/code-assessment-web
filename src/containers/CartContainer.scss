@@ -1,4 +1,10 @@
+@import '../scss/main.scss';
+
 .CartContainer {
+  > .Button {
+    font-size: 14px;
+  }
+
   .icon-shopping-cart {
     margin-right: 8px;
   }
