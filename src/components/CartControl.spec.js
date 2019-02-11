@@ -6,14 +6,14 @@ import CartControl from './CartControl'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-const setup = () => {
+const setup = (value = 2, reserves = 10) => {
   const actions = {
     modify: jest.fn(),
     onQuantityChange: jest.fn()
   }
 
   const component = Enzyme.mount(
-    <CartControl modify={actions.modify} value={2} reserves={10} />
+    <CartControl modify={actions.modify} value={value} reserves={reserves} />
   )
 
   return {
@@ -41,5 +41,15 @@ describe('CartControl component', () => {
     const { increment, actions } = setup()
     increment.simulate('click')
     expect(actions.modify).toHaveBeenCalledWith(3)
+  })
+
+  it('should render disabled decrement button when input is 1', () => {
+    const { decrement } = setup(1, 0)
+    expect(decrement.prop('disabled')).toBeTruthy()
+  })
+
+  it('should render disabled decrement button when reserves are 0', () => {
+    const { increment } = setup(5, 0)
+    expect(increment.prop('disabled')).toBeTruthy()
   })
 })
