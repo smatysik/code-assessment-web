@@ -12,7 +12,6 @@ class CartControl extends React.Component {
   }
 
   render() {
-    console.log('render cartControl')
     const { value, reserves } = this.props
     return (
       <div className="CartControl">
