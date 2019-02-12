@@ -77,7 +77,7 @@
     display: block;
     font-size: 13px;
     letter-spacing: 0;
-    color: #939393;
+    color: $text-gray;
     text-transform: uppercase;
 
     @include tablet() {

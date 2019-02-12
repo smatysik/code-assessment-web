@@ -1,7 +1,7 @@
 @import '../scss/main.scss';
 
 #modal {
-  background-color: #d5d6da;
+  background-color: $modal-bg;
   position: fixed;
   left: 0;
   right: 0;

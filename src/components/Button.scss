@@ -14,15 +14,15 @@
 
   &.text-link {
     font-size: 14px;
-    color: #292929;
+    color: $btn-text-link;
 
     &:hover:enabled {
-      color: #407fc0;
+      color: $btn-text-hovered;
     }
 
     &:disabled,
     &[disabled] {
-      color: #b1b2b1;
+      color: $btn-text-disabled;
     }
   }
 
@@ -30,13 +30,13 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: -0.15px;
-    color: #ffffff;
-    background-color: #5e97d1;
+    color: $btn-cta-primary;
+    background-color: $btn-cta-primary-bg;
     padding: 12px 20px 13px 26px;
     border-radius: 100px;
 
     &:hover:enabled {
-      background-color: #407fc0;
+      background-color: $btn-cta-primary-bg;
     }
 
     &:disabled,
@@ -51,8 +51,8 @@
   }
 
   &.secondary {
-    background-color: #f5f5f5;
-    color: #8e939c;
+    background-color: $btn-cta-secondary-bg;
+    color: $gray;
     padding: 14px 40px 13px 41px;
     border-radius: 200px 0 0 200px;
 
@@ -64,26 +64,26 @@
 
     &:hover:enabled,
     &:active:enabled {
-      background-color: #5e97d1;
-      color: #ffffff;
+      background-color: $btn-cta-secondary-hovered-bg;
+      color: $btn-cta-primary;
 
       span {
         &:before,
         &:after {
-          background-color: #ffffff;
+          background-color: $btn-cta-primary;
         }
       }
     }
 
     &:disabled,
     &[disabled] {
-      background-color: #f9f9f9;
-      color: #dedede;
+      background-color: $btn-cta-secondary-disabled-bg;
+      color: $btn-cta-secondary-disabled;
 
       span {
         &:before,
         &:after {
-          background-color: #dedede;
+          background-color: $btn-cta-secondary-disabled;
         }
       }
     }
