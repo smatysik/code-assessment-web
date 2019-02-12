@@ -1,4 +1,5 @@
 import React from 'react'
+import 'react-app-polyfill/ie11'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
 import './App.scss'

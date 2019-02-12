@@ -36,7 +36,11 @@
 
     .cart-items {
       height: 100%;
-      overflow: auto;
+      width: 100%;
+
+      &.column {
+        overflow: auto;
+      }
     }
 
     .cart-item {
