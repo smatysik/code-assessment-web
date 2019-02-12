@@ -57,4 +57,4 @@ Maps JSON endpoint object structure to JSON file product structure to avoid rewr
 
 - Error messaging when adding too many products
 - Implement localization, using the product currency value to convert prices before display in utils/CurrencyFormatter.js
-- Implement srcset to serve appropriately sized image assets based on screen width, implement build process using [sharp](https://github.com/lovell/sharp) to generate needed sizes.
+- Implement srcset to serve appropriately sized image assets based on screen width, implement build process using [sharp](https://github.com/lovell/sharp) to generate needed sizes and webp-encoded files to address Google Lighthouse audit feedback.
