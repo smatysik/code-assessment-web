@@ -20,7 +20,7 @@ const setup = (total, products = []) => {
   return {
     component: component,
     actions: actions,
-    button: component.find(Button).at(3),
+    button: component.find(Button).at(1),
     products: component.find(Product),
     em: component.find('.no-items span').at(1),
     p: component.find('.grand-total span').at(1)
@@ -58,7 +58,8 @@ describe('Cart component', () => {
         quantity: product[0].quantity,
         image: 'product-image.jpg',
         displayInventory: false,
-        children: (
+        children: [
+          null,
           <Button
             onClick={() => {
               actions.modifyQuantity(1, 0)
@@ -67,7 +68,7 @@ describe('Cart component', () => {
           >
             Remove
           </Button>
-        )
+        ]
       }
 
       expect(JSON.parse(JSON.stringify(products.at(0).props()))).toEqual(
