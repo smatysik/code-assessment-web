@@ -36,7 +36,7 @@
 
     .cart-items {
       height: 100%;
-      overflow-y: scroll;
+      overflow: auto;
     }
 
     .cart-item {
@@ -117,6 +117,7 @@
       line-height: 28px;
       letter-spacing: -0.44px;
       width: 90%;
+      max-width: 250px;
 
       &.icon-shopping-cart {
         width: 100%;
