@@ -41,7 +41,7 @@ Both 'Remove' and 'Update an item quantity' are implemented via the same action 
 
 ### New Components
 
-- CartControl.js: accepts a value and modify function as props; implements decrement/increment functionality on top of the modify function prop.
+- CartControl.js: accepts a value and modify function as props; implements decrement/increment functionality on top of the modify function prop. Cart renders CartControl based on the width of the component to improve layout behavior.
 
 ## Task 3
 
